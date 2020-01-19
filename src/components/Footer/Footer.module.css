@@ -1,0 +1,81 @@
+/*seven*/
+.seven_part {
+  display: grid;
+  justify-items: center;
+  align-items: center;
+  grid-template-areas: "about about" "follow newsletter";
+  height: 500px;
+  background: black;
+}
+
+.about {
+  grid-area: about;
+  color: #FFFFFF;
+  text-align: center;
+  letter-spacing: 0.5px;
+  line-height: 30px;
+}
+
+.about h4 {
+  margin: 0;
+  padding: 0;
+}
+
+.follow {
+  align-self: start;
+  justify-self: end;
+  grid-area: follow;
+  color: #FFFFFF;
+  padding-right: 100px;
+}
+
+.follow h4 {
+  margin-left: 15px;
+}
+
+.icons {
+  display: grid;
+  grid-template-columns: repeat(4, 3fr);
+  font-size: 20px;
+  list-style: none;
+  justify-items: end;
+  align-items: end;
+}
+
+.icons a {
+  padding: 10px;
+  color: white;
+}
+
+.newsletter {
+  margin-left: 100px;
+  align-self: start;
+  justify-self: start;
+  color: white;
+  grid-area: newsletter;
+}
+
+.newsletter h4 {
+  margin-left: 35px;
+}
+
+.newsletter input {
+  font-size: 15px;
+}
+
+/*footer*/
+.footer {
+  height: 90px;
+  background: #262626;
+}
+
+.footer p {
+  text-align: center;
+  color: gray;
+  font-size: 14px;
+  letter-spacing: 0.5px;
+  padding: 20px;
+  margin: 0;
+}
+
+/*# sourceMappingURL=Footer.module.css.map */

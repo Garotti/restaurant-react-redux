@@ -1,5 +1,5 @@
 import React from 'react';
-import s from './Header.module.css';
+import s from './Header.module.scss';
 import {NavLink} from 'react-router-dom'
 import {FaInstagram, FaTelegramPlane, FaTwitter, IoLogoFacebook} from "react-icons/all";
 
@@ -14,7 +14,7 @@ const Header = (props) => {
                 </div>
                 <ul className={s.nav_center}>
                     <li><NavLink to={'/home'}>Home</NavLink></li>
-                    <li><NavLink to={'/about'}>Reservations</NavLink></li>
+                    <li><NavLink to={'/reservations'}>Reservations</NavLink></li>
                     <li><NavLink to={'/menu'}>Menu</NavLink></li>
                     <li><NavLink to={'/press'}>Blog</NavLink></li>
                     <li><NavLink to={'/contact'}>Contact</NavLink></li>

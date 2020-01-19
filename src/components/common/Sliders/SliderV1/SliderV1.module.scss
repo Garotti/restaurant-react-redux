@@ -1,0 +1,22 @@
+@import '../../../../styles/mixins';
+.images {
+  img {
+    width: 100%;
+    height: 650px;
+    @include back_photo;
+    background-image: url("../../../../assets/images/slider-2.jpeg");
+  }
+}
+.but{
+  position: relative;
+  .next{
+    @include next_prev;
+    right: 0;
+    z-index: 1000;
+  }
+  .prev{
+    @include next_prev;
+    left: 0;
+    z-index: 1000;
+  }
+}
