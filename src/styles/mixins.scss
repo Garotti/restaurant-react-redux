@@ -89,3 +89,69 @@
     opacity: 0.5;
   }
 }
+// menu
+@mixin text_menu{
+  color: #515151;
+  font-size: 17px;
+  line-height: 1.7;
+  font-family: Cabin sans-serif;
+
+}
+// blog
+@mixin blog_default_text_part{
+  a{
+    text-decoration: none;
+    color:rgb(37, 37, 37);
+    font-family: "Source Sans Pro", sans-serif;
+    font-size: 32px;
+    font-stretch: 100%;
+    font-style: normal;
+    font-weight: 700;
+    letter-spacing: 3.2px;
+    line-height: 36.32px;
+    text-transform: uppercase;
+    &:hover{
+      color: #C59D5F;
+    }
+  }
+  p{
+    display:block;
+    font-family:Cabin sans-serif;
+    font-size:16px;
+    font-stretch:100%;
+    font-style:normal;
+    font-weight:400;
+    line-height:27.2px;
+    margin-bottom: 20px;
+  }
+  .read_more {
+    color: rgb(197, 157, 95);
+    font-family: Cabin sans-serif;
+    font-size: 16px;
+    font-stretch: 100%;
+    font-weight: 400;
+    letter-spacing: 1.3px;
+    line-height: 13px;
+    text-align: center;
+    text-transform: uppercase;
+    &:hover {
+      color: black;
+    }
+  }
+  .time{
+    text-transform: uppercase;
+    color: gray;
+    span{
+      font-size: 30px;
+      padding: 5px;
+    }
+  }
+}
+
+
+
+
+
+
+
+

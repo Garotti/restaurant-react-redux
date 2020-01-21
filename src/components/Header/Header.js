@@ -16,7 +16,7 @@ const Header = (props) => {
                     <li><NavLink to={'/home'}>Home</NavLink></li>
                     <li><NavLink to={'/reservations'}>Reservations</NavLink></li>
                     <li><NavLink to={'/menu'}>Menu</NavLink></li>
-                    <li><NavLink to={'/press'}>Blog</NavLink></li>
+                    <li><NavLink to={'/blog'}>Blog</NavLink></li>
                     <li><NavLink to={'/contact'}>Contact</NavLink></li>
                 </ul>
                 <ul className={s.nav_right}>

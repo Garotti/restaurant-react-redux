@@ -1,0 +1,38 @@
+@import '../../styles/mixins';
+
+.background_menu {
+  @include back_photo;
+  height: 50vh;
+  &::before {
+    background-image: url("../../assets/images/food-8.jpeg");
+  }
+  h1 {
+    color: #FFFFFF;
+    text-align: center;
+    margin: 230px 0 0 0;
+    text-transform: uppercase;
+    font-size: 40px;
+    letter-spacing: 10px;
+  }
+}
+
+.second_part_menu {
+  .header_menu_text {
+    display: grid;
+    grid-template-columns: 6fr 6fr;
+    margin: 40px 0 0 0;
+    p{
+      @include text_menu;
+    }
+    .right_text{
+      justify-self: start;
+      align-self: start;
+      margin: 0 30px 0 30px;
+    }
+    .left_text{
+      margin: 0 30px 0 30px;
+      justify-self: end;
+      align-self: end;
+    }
+  }
+}
