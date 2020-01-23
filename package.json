@@ -6,8 +6,13 @@
     "@testing-library/jest-dom": "^4.2.4",
     "@testing-library/react": "^9.4.0",
     "@testing-library/user-event": "^7.2.1",
+    "canvas": "^2.6.1",
+    "formik": "^2.1.2",
+    "google-maps-react": "^2.0.2",
     "react": "^16.12.0",
+    "react-canvas-draw": "^1.1.0",
     "react-dom": "^16.12.0",
+    "react-google-map": "^3.1.1",
     "react-icons": "^3.8.0",
     "react-redux": "latest",
     "react-router-dom": "^5.1.2",
@@ -36,6 +41,9 @@
     ]
   },
   "devDependencies": {
-    "node-sass": "^4.13.1"
+    "google-map-react": "^1.1.5",
+    "node-sass": "^4.13.1",
+    "react-google-maps": "^9.4.5",
+    "yup": "^0.28.0"
   }
 }

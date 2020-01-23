@@ -1,0 +1,30 @@
+.input_row {
+  padding: 5px;
+  label {
+    color: rgb(81, 81, 81);
+    font-family: Cabin, sans-serif;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 27.2px;
+    font-style: normal;
+  }
+  input,textarea{
+    border-radius: 5px;
+    font-size: 20px;
+    width: 400px;
+    border: 2px solid gainsboro;
+  }
+  button {
+    background: #252525;
+    color: #FFFFFF;
+    border: 1px solid #252525;
+    border-radius: 3px;
+    padding: 9px 25px;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    &:hover{
+      background: #C59D5F;
+      border: 1px solid #C59D5F;
+    }
+  }
+}
