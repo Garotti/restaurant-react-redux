@@ -1,7 +1,7 @@
-const SET_MENU = 'SET_MENU';
 const ADD_TO_CART = 'ADD_TO_CART';
 const ADD_QUANTITY = 'ADD_QUANTITY';
 const REMOVE_ITEM = 'REMOVE_ITEM';
+const SUB_QUANTITY = 'SUB_QUANTITY';
 
 let initialState = {
     items: [
@@ -58,7 +58,28 @@ const menuReducer = (state = initialState, action) => {
             let newTotal = state.total + addedItem.price;
             return {
                 ...state,
-                total: newTotal
+                total: Math.floor(newTotal * 100) / 100
+            }
+        }
+        case SUB_QUANTITY: {
+            let addedItem = state.items.find(item => item.id === action.id);
+            // if quantity less 0 then removed
+            if(addedItem.quantity === 1){
+                let new_items = state.addedItems.filter(item => item.id !== action.id);
+                let newTotal = state.total - addedItem.price;
+                return {
+                    ...state,
+                    addedItems: new_items,
+                    total: newTotal
+                }
+            }
+            else{
+                addedItem.quantity -= 1
+                let newTotal = state.total - addedItem.price;
+                return {
+                    ...state,
+                    total: Math.floor(newTotal * 100) / 100
+                }
             }
         }
         default:
@@ -70,6 +91,7 @@ export const addToCart = (id) => ({type: ADD_TO_CART, id});
 export const removeItem = (id) => ({type: REMOVE_ITEM, id});
 
 export const addQuantity = (id) => ({type: ADD_QUANTITY, id});
+export const subtractQuantity = (id) => ({type: SUB_QUANTITY, id});
 
 
 

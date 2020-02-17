@@ -1,7 +1,14 @@
-import React from 'react';
+import React, {useState} from 'react';
 import s from './Cart.module.scss';
+import {IoMdArrowDropupCircle, MdArrowDropDownCircle} from "react-icons/all";
 const Cart = (props) => {
 
+    const addQuantity = (id) => {
+        props.addQuantity(id)
+    };
+    const subtractQuantity = (id) => {
+        props.subtractQuantity(id);
+    };
 
     let addedItems = props.items.length ?
         (
@@ -20,6 +27,10 @@ const Cart = (props) => {
                             <p>
                                 <b>Quantity: {item.quantity}</b>
                             </p>
+                            <div className={s.add_remove}>
+                                <span onClick={() => addQuantity(item.id)}><IoMdArrowDropupCircle /></span>
+                                <span onClick={() => subtractQuantity(item.id)}><MdArrowDropDownCircle /></span>
+                            </div>
                             <button onClick={() => props.removeItem(item.id)}>Remove</button>
                         </div>
                     </li>

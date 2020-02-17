@@ -1,7 +1,7 @@
 import React from 'react';
 import Cart from "./Cart";
 import {connect} from "react-redux";
-import {addToCart, removeItem, setMenuAc} from "../../redux/menu-reducer";
+import {addQuantity, removeItem, subtractQuantity} from "../../redux/menu-reducer";
 
 class CartContainer extends React.Component {
     render() {
@@ -10,6 +10,8 @@ class CartContainer extends React.Component {
                 <Cart items={this.props.items}
                       total={this.props.total}
                       removeItem={this.props.removeItem}
+                      addQuantity={this.props.addQuantity}
+                      subtractQuantity={this.props.subtractQuantity}
                 />
             </div>
         );
@@ -20,12 +22,13 @@ const mapStateToProps = (state) => {
         items: state.menuPage.addedItems,
         total: state.menuPage.total
 
-        // addedItems: state.addedItems
     }
 };
 
 const mapDispatchToProps = {
-    removeItem: removeItem
+    removeItem: removeItem,
+    addQuantity: addQuantity,
+    subtractQuantity: subtractQuantity
 };
 
 
