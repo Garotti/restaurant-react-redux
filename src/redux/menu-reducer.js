@@ -1,6 +1,7 @@
 const SET_MENU = 'SET_MENU';
 const ADD_TO_CART = 'ADD_TO_CART';
 const ADD_QUANTITY = 'ADD_QUANTITY';
+const REMOVE_ITEM = 'REMOVE_ITEM';
 
 let initialState = {
     items: [
@@ -16,12 +17,6 @@ let initialState = {
 
 const menuReducer = (state = initialState, action) => {
     switch (action.type) {
-        case SET_MENU: {
-            return {
-                ...state,
-                menu: [...state, ...action.menu]
-            }
-        }
         case ADD_TO_CART: {
             let addedItem = state.items.find(item => item.id === action.id);
             //check if the action id exists in the addedItems
@@ -45,6 +40,18 @@ const menuReducer = (state = initialState, action) => {
                 }
             }
         }
+        case REMOVE_ITEM: {
+            let itemToRemove = state.addedItems.find(item => action.id === item.id);
+            let new_items = state.addedItems.filter(item => action.id !== item.id);
+            // price
+            let newTotal = state.total - (itemToRemove.price * itemToRemove.quantity);
+            console.log(itemToRemove);
+            return {
+                ...state,
+                addedItems: new_items,
+                total: Math.ceil(newTotal * 100) / 100
+            }
+        }
         case ADD_QUANTITY: {
             let addedItem = state.items.find(item => item.id === action.id);
             addedItem.quantity +=1;
@@ -59,17 +66,11 @@ const menuReducer = (state = initialState, action) => {
     }
 };
 
-export const setMenuAc = (menu) => ({type: SET_MENU, menu});
+export const addToCart = (id) => ({type: ADD_TO_CART, id});
+export const removeItem = (id) => ({type: REMOVE_ITEM, id});
 
-export const addToCart = (id) => {
-    return{type: ADD_TO_CART, id}};
+export const addQuantity = (id) => ({type: ADD_QUANTITY, id});
 
-export const addQuantity = (id) => {
-    return {
-        type: ADD_QUANTITY,
-        id
-    }
-};
 
 
 export default menuReducer;

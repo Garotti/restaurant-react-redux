@@ -1,7 +1,7 @@
 import React from 'react';
 import Menu from "./Menu";
 import {connect} from "react-redux";
-import {addToCart, setMenuAc} from "../../redux/menu-reducer";
+import {addToCart} from "../../redux/menu-reducer";
 
 class MenuContainer extends React.Component {
 
@@ -10,7 +10,6 @@ class MenuContainer extends React.Component {
             <div>
                 <Menu menu={this.props.menu}
                       total={this.props.total}
-                      setMenu={this.props.setMenuAc}
                       addToCart={this.props.addToCart}
                       items={this.props.items}
                 />
@@ -28,7 +27,6 @@ const mapStateToProps = (state) => {
 };
 
 const mapDispatchToProps = {
-    setMenuAc: setMenuAc,
     addToCart: addToCart
 };
 

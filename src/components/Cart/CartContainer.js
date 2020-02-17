@@ -1,6 +1,7 @@
 import React from 'react';
 import Cart from "./Cart";
 import {connect} from "react-redux";
+import {addToCart, removeItem, setMenuAc} from "../../redux/menu-reducer";
 
 class CartContainer extends React.Component {
     render() {
@@ -8,6 +9,7 @@ class CartContainer extends React.Component {
             <div>
                 <Cart items={this.props.items}
                       total={this.props.total}
+                      removeItem={this.props.removeItem}
                 />
             </div>
         );
@@ -22,8 +24,9 @@ const mapStateToProps = (state) => {
     }
 };
 
-const mapDispatchToProps = (dispatch) => {
-
+const mapDispatchToProps = {
+    removeItem: removeItem
 };
+
 
 export default connect(mapStateToProps,mapDispatchToProps)(CartContainer);

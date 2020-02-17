@@ -2,6 +2,7 @@ import React from 'react';
 import s from './Cart.module.scss';
 const Cart = (props) => {
 
+
     let addedItems = props.items.length ?
         (
             props.items.map(item => {
@@ -19,8 +20,8 @@ const Cart = (props) => {
                             <p>
                                 <b>Quantity: {item.quantity}</b>
                             </p>
+                            <button onClick={() => props.removeItem(item.id)}>Remove</button>
                         </div>
-
                     </li>
                 </div>
                 )
