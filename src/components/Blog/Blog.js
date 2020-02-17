@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useState} from 'react';
 import s from './Blog.module.scss';
 import {FaAngleDown, GoSearch} from "react-icons/all";
 import blog_img_1 from '../../assets/images/blog-img-1.jpg';
@@ -8,6 +8,9 @@ import blog_img_4 from '../../assets/images/blog-4-img.jpg'
 import Footer from "../Footer/Footer";
 
 const Blog = () => {
+    const [inputValue, setInputValue] = useState('');
+
+
     return (<>
             <section className={s.blog_first_part}>
                 <div className={s.header_news}>
@@ -24,7 +27,11 @@ const Blog = () => {
                     </div>
                 </div>
                 <div className={s.search}>
-                    <input type="text" value={'Search...'}/>
+                    <input onChange={e => setInputValue(e.target.value)}
+                           type="text"
+                           placeholder={'Search...'}
+                           value={inputValue}
+                    />
                     <button className={s.but}><GoSearch></GoSearch></button>
                 </div>
             </section>

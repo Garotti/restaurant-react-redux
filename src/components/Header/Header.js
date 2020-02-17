@@ -1,7 +1,7 @@
 import React from 'react';
 import s from './Header.module.scss';
 import {NavLink} from 'react-router-dom'
-import {FaInstagram, FaTelegramPlane, FaTwitter, IoLogoFacebook} from "react-icons/all";
+import {FaInstagram, FaShoppingCart, FaTelegramPlane, FaTwitter, IoLogoFacebook} from "react-icons/all";
 
 
 const Header = (props) => {
@@ -24,6 +24,7 @@ const Header = (props) => {
                     <li><a href={"https://www.instagram.com/"}><FaTwitter></FaTwitter></a></li>
                     <li><a href={"https://www.facebook.com/"}><FaInstagram></FaInstagram></a></li>
                     <li><a href={"https://www.facebook.com/"}><FaTelegramPlane></FaTelegramPlane></a></li>
+                    <li><NavLink to="Cart"><FaShoppingCart></FaShoppingCart></NavLink></li>
                 </ul>
             </nav>
         </header>

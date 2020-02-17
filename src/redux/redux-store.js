@@ -1,7 +1,8 @@
-import {combineReducers, createStore} from "redux";
+import {combineReducers, compose, createStore} from "redux";
+import menuReducer from "./menu-reducer";
 
 let reducers = combineReducers({
-
+    menuPage: menuReducer,
 });
 
 const store = createStore(reducers);

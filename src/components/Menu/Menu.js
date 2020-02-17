@@ -1,7 +1,14 @@
-import React from 'react';
+import React, {useState} from 'react';
 import s from './Menu.module.scss'
+import LittleCart from "./LittleCart/LittleCart";
 
-const Menu = () => {
+const Menu = (props) => {
+    const [boolValue, setBoolValue] = useState(false);
+    const handleClick = (id) => {
+        props.addToCart(id);
+        setBoolValue(true);
+    };
+    debugger;
     return (
         <div>
             <section className={s.background_menu}>
@@ -17,10 +24,29 @@ const Menu = () => {
                     </div>
                     <div className={s.right_text}>
                         <p>designed for sharing. Using incredible British produce, whole animals and fish <br/>
-                            are butchered and prepared on site every day, and paired with ingredients so good  <br/>
+                            are butchered and prepared on site every day, and paired with ingredients so good <br/>
                             they really speak for themselves.
                         </p>
                     </div>
+                </div>
+            </section>
+            <section className={s.main_menu}>
+                <div className={s.menu_part}>
+                    {props.menu.map(m => <div key={m.id}>
+                        <div className={s.price_header}>
+                            <h4>{m.dish}</h4>
+                            <span>{m.price}$</span>
+                        </div>
+                        <div className={s.desc_button}>
+                            <p>{m.description}</p>
+                            <button onClick={() => handleClick(m.id)}>Order now</button>
+                        </div>
+                    </div>)}
+                </div>
+                <div className={s.cart}>
+                    <LittleCart  price={props.total}
+                                 items={props.items}
+                    />
                 </div>
             </section>
         </div>
