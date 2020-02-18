@@ -1,6 +1,7 @@
 import React, {useState} from 'react';
 import s from './Menu.module.scss'
 import LittleCart from "./LittleCart/LittleCart";
+import {addQuantity, subtractQuantity} from "../../redux/menu-reducer";
 
 const Menu = (props) => {
     const [boolValue, setBoolValue] = useState(false);
@@ -9,7 +10,7 @@ const Menu = (props) => {
         props.addToCart(id);
         setBoolValue(true);
     };
-    debugger;
+
     return (
         <div>
             <section className={s.background_menu}>
@@ -47,6 +48,9 @@ const Menu = (props) => {
                 <div className={s.cart}>
                     <LittleCart  price={props.total}
                                  items={props.items}
+                                 addQuantity={props.addQuantity}
+                                 subtractQuantity={props.subtractQuantity}
+                                 itemTotal={props.itemTotal}
                     />
                 </div>
             </section>

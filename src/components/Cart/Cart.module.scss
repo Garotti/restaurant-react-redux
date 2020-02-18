@@ -1,6 +1,39 @@
-.container{
+.container {
   margin: 80px 300px;
+
   .cart {
+    .quantity {
+      display: grid;
+      grid-template-columns: 4fr 4fr 4fr;
+      justify-items: center;
+      align-items: center;
+
+      .remove_btn {
+        button {
+          background: #ea4563;
+          padding: 8px 20px;
+          border-radius: 3px;
+          color: white;
+          border: 1px solid #ea4563;
+          text-transform: uppercase;
+          cursor: pointer;
+          &:hover{
+            background: darken(#ea4563,3);
+          }
+          &:active{
+            background: darken(#ea4563, 6);
+          }
+        }
+      }
+      .add_remove {
+        span {
+          color: goldenrod;
+          font-size: 25px;
+          cursor: pointer;
+        }
+      }
+    }
+
     .collection {
       display: grid;
       grid-template-columns: 3fr 3fr 3fr;
@@ -8,23 +41,28 @@
 
       text-decoration: none;
       list-style-type: none;
-      .carts{
-        background: wheat;
+
+      .carts {
+        background: white;
+        box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
         text-align: center;
-        .name_of_dish{
+
+        .name_of_dish {
           font-size: 19px;
           font-weight: 500;
           letter-spacing: 1.9px;
           line-height: 24px;
           text-transform: uppercase;
         }
-        .description{
+
+        .description {
           font-family: "Source Sans Pro", sans-serif;
-          color:rgb(81, 81, 81);
+          color: rgb(81, 81, 81);
           line-height: 22px;
         }
       }
     }
+
     .images {
       img {
         width: 390px;

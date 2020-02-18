@@ -24,14 +24,21 @@ const Cart = (props) => {
                             <span className={s.name_of_dish}>{item.dish}</span>
                             <p className={s.description}>{item.description}</p>
                             <p><b>Price: {item.price}$</b></p>
-                            <p>
-                                <b>Quantity: {item.quantity}</b>
-                            </p>
-                            <div className={s.add_remove}>
-                                <span onClick={() => addQuantity(item.id)}><IoMdArrowDropupCircle /></span>
-                                <span onClick={() => subtractQuantity(item.id)}><MdArrowDropDownCircle /></span>
+                            <div className={s.quantity}>
+                                <div>
+                                    <p>
+                                        <b>Quantity: {item.quantity}</b>
+                                    </p>
+                                </div>
+                                <div className={s.add_remove}>
+                                    <span onClick={() => addQuantity(item.id)}><i className={s.up}><IoMdArrowDropupCircle /></i></span>
+                                    <span onClick={() => subtractQuantity(item.id)}><i className={s.down}><MdArrowDropDownCircle /></i></span>
+                                </div>
+                                <div className={s.remove_btn}>
+                                    <button onClick={() => props.removeItem(item.id)}>Remove</button>
+                                </div>
                             </div>
-                            <button onClick={() => props.removeItem(item.id)}>Remove</button>
+
                         </div>
                     </li>
                 </div>
