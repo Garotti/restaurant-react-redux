@@ -131,26 +131,27 @@ const menuReducer = (state = initialState, action) => {
                 addedItem.quantity += 1;
                 console.log(addedItem);
 
-                // let newTotal = parseFloat(state.total) + parseFloat(addedItem.price);
-                // newTotal = newTotal.toFixed(2);
-                // let newTotal2 = (state.total + addedItem.price).toFixed(2);
-                // let handlePrice = newTotal => {
-                //     newTotal += addedItem.price;
-                //     if (newTotal === null || newTotal === '' || newTotal === undefined) { return '' }
-                //     let handle = newTotal.toString().replace(/[^\d.]/g, '');
-                //     handle = handle.slice(0, handle.indexOf('.') >= 0 ? handle.indexOf('.') + 3 : undefined);
-                //     return handle;
-                // };
+                let newTotal = parseFloat(state.total.toString());
+                newTotal = (newTotal + parseFloat(addedItem.price.toString())).toFixed(2);
+
+                // newTotal = newTotal.toString();
+                // const decimal = newTotal.indexOf('.');
+                // const asdqwe = newTotal.slice(0, decimal + 2);
+
                 return {
                     ...state,
-                    total: parseFloat(state.total) + parseFloat(addedItem.price)
+                    // total: parseFloat(state.total.toFixed(2)) + parseFloat(addedItem.price.toFixed(2))
+                    total: newTotal
                         // Math.floor((state.total + addedItem.price) * 100) / 100
                 }
             } else {
                 addedItem.quantity = 1;
                 // calc the total
-                let newTotal = parseFloat(state.total) + parseFloat(addedItem.price);
-                newTotal = newTotal.toFixed(2);
+
+                let newTotal = parseFloat(state.total.toString());
+                newTotal = (newTotal + parseFloat(addedItem.price.toString())).toFixed(2);
+                console.log(newTotal);
+
                 // let handlePrice = newTotal => {
                 //     newTotal += addedItem.price;
                 //     if (newTotal === null || newTotal === '' || newTotal === undefined) { return '' }
@@ -162,7 +163,7 @@ const menuReducer = (state = initialState, action) => {
                 return {
                     ...state,
                     addedItems: [...state.addedItems, addedItem],
-                    total: parseFloat(state.total) + parseFloat(addedItem.price)
+                    total: newTotal
                 }
             }
         }
@@ -192,18 +193,25 @@ const menuReducer = (state = initialState, action) => {
             // if quantity less 0 then removed
             if (addedItem.quantity === 1) {
                 let new_items = state.addedItems.filter(item => item.id !== action.id);
-                let newTotal = state.total - addedItem.price;
+                // let newTotal = state.total - addedItem.price;
+
+                let newTotal = parseFloat(state.total.toString());
+                newTotal = (newTotal - parseFloat(addedItem.price.toString())).toFixed(2);
+
                 return {
                     ...state,
                     addedItems: new_items,
-                    total: Math.floor(newTotal * 100) / 100
+                    total: newTotal
                 }
             } else {
                 addedItem.quantity -= 1;
-                let newTotal = state.total - addedItem.price;
+                // let newTotal = state.total - addedItem.price;
+                let newTotal = parseFloat(state.total.toString());
+                newTotal = (newTotal - parseFloat(addedItem.price.toString())).toFixed(2);
+
                 return {
                     ...state,
-                    total: Math.floor(newTotal * 100) / 100
+                    total: newTotal
                 }
             }
         }

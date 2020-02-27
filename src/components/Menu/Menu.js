@@ -7,7 +7,6 @@ const Menu = (props) => {
     const [boolValue, setBoolValue] = useState(false);
     const handleClick = (id) => {
         props.addToCart(id);
-        console.log(props.total);
         setBoolValue(true);
     };
     const handleSetDessert = (id) => {
