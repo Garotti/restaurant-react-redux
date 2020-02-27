@@ -4,9 +4,13 @@ import reservation_1 from '../../assets/images/reservations_foto-1.jpg';
 import reservation_2 from '../../assets/images/reservation_foto-2.jpg';
 import SliderV1 from "../common/Sliders/SliderV1/SliderV1";
 import Footer from "../Footer/Footer";
+import {FaRegCalendarAlt, FaRegClock, IoMdPerson} from "react-icons/all";
 
 
-const Reservations = () => {
+const Reservations = (props) => {
+
+    let date = new Date();
+
     return (
         <div>
             <section className={s.background_photo}>
@@ -21,9 +25,27 @@ const Reservations = () => {
                 <div className={s.make_reservation}>
                     <h4>Make online reservation</h4>
                     <div className={s.date_time_people}>
-                        <div><i>input data calendar</i></div>
-                        <div><i>select time</i></div>
-                        <div><i>how many people</i></div>
+                        <div>
+                            <i><FaRegCalendarAlt></FaRegCalendarAlt></i>
+                            <input type="text" placeholder={date} value={date}/>
+                        </div>
+                        <div>
+                            <i><FaRegClock></FaRegClock></i>
+                            <select name="ResTime" id="time-otreservations">
+                                {props.optionsValue.map(item => <option key={item.id}  value={item.value}>
+                                    {item.value}
+                                </option>)}
+                            </select>
+                        </div>
+                        <div>
+                            <i><IoMdPerson></IoMdPerson></i>
+                            <select name="partySize" id="party-otreservation">
+                                {props.people.map(party =>
+                                    <option key={party.id} value={party.people}>
+                                        {party.people}
+                                    </option>)}
+                            </select>
+                        </div>
                     </div>
                     <div className={s.find_table_b}>
                         <input type="submit" value={"Find a Table"}/>

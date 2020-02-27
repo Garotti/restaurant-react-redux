@@ -1,10 +1,28 @@
-import React from 'react';
-import s from './LittleCart.module.scss'
+import React, {useEffect, useState} from 'react';
 import {NavLink} from "react-router-dom";
-import {subtractQuantity} from "../../../redux/menu-reducer";
+
+import s from './LittleCart.module.scss'
 import {IoIosAdd, IoIosRemove} from "react-icons/all";
 
 const LittleCart = (props) => {
+
+    const [scrollValue, setScrollValue] = useState(false);
+
+    useEffect(() => {
+        window.addEventListener('scroll', () => {
+            const isTop = window.scrollY < 450;
+            if (isTop !== true) {
+                setScrollValue(true);
+            }else{
+                setScrollValue(false);
+            }
+        });
+    });
+    useEffect(() => {
+        window.removeEventListener('scroll', () => {
+
+        });
+    });
 
     const subtractQuantity = (id) =>{
         props.subtractQuantity(id);
@@ -13,8 +31,9 @@ const LittleCart = (props) => {
         props.addQuantity(id)
     };
 
+
     return (
-        <div className={s.cart}>
+        <div className={scrollValue ? s.active : s.cart}>
             <button>Delivery</button>
             <button>Takeaway</button>
             <div className={s.cart_header}>
@@ -27,14 +46,17 @@ const LittleCart = (props) => {
                                     <span className={s.little_header}>{item.dish}</span>
                                 </div>
                                 <div>
-                                    <span onClick={() => addQuantity(item.id)}><IoIosAdd /></span>
-                                    <span className={s.subtract} onClick={() => subtractQuantity(item.id)}><IoIosRemove /></span>
+                                    <span onClick={() => addQuantity(item.id)}><IoIosAdd/></span>
+                                    <span className={s.subtract}
+                                          onClick={() => subtractQuantity(item.id)}><IoIosRemove/></span>
                                 </div>
-                                {item.price}$</p>
+                                {item.price}$
+                            </p>
                         </div>) :
                         <div className={s.cart_image}>
-                            <img src="https://cdn0.iconfinder.com/data/icons/shopping-cart-26/1000/Shopping-Basket-03-512.png"
-                                 alt="cart"/>
+                            <img
+                                src="https://cdn0.iconfinder.com/data/icons/shopping-cart-26/1000/Shopping-Basket-03-512.png"
+                                alt="cart"/>
                             <p>Card is empty</p>
                         </div>
                     }
@@ -42,7 +64,8 @@ const LittleCart = (props) => {
                     <NavLink to={'#'} className={s.cart_image_a}>I have a coupon</NavLink>
                 </div>
             </div>
-            <h3>Total price: {props.price}</h3>
+            <h3>Total price: {props.price}$</h3>
+            <NavLink to={"/cart"} className={s.relocateToCart}>go to Cart</NavLink>
         </div>
     );
 };

@@ -1,7 +1,7 @@
 import React from 'react';
 import Menu from "./Menu";
 import {connect} from "react-redux";
-import {addQuantity, addToCart, subtractQuantity} from "../../redux/menu-reducer";
+import {addQuantity, addToCart, setDessert, setMains, subtractQuantity} from "../../redux/menu-reducer";
 
 class MenuContainer extends React.Component {
 
@@ -11,8 +11,11 @@ class MenuContainer extends React.Component {
                 <Menu menu={this.props.menu}
                       total={this.props.total}
                       itemTotal={this.props.itemTotal}
-                      addToCart={this.props.addToCart}
                       items={this.props.items}
+                      desserts={this.props.desserts}
+
+
+                      addToCart={this.props.addToCart}
                       addQuantity={this.props.addQuantity}
                       subtractQuantity={this.props.subtractQuantity}
                 />
@@ -23,10 +26,12 @@ class MenuContainer extends React.Component {
 
 const mapStateToProps = (state) => {
     return{
-        menu: state.menuPage.items,
         total: state.menuPage.total,
+        itemTotal: state.menuPage.itemTotal,
+
+        desserts: state.menuPage.desserts,
+        menu: state.menuPage.items,
         items: state.menuPage.addedItems,
-        itemTotal: state.menuPage.itemTotal
     }
 };
 

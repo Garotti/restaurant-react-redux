@@ -3,9 +3,11 @@
 .background_menu {
   @include back_photo;
   height: 50vh;
+
   &::before {
     background-image: url("../../assets/images/food-8.jpeg");
   }
+
   h1 {
     color: #FFFFFF;
     text-align: center;
@@ -21,85 +23,107 @@
     display: grid;
     grid-template-columns: 6fr 6fr;
     margin: 40px 0 0 0;
-    p{
+
+    p {
       @include text_menu;
     }
-    .right_text{
+
+    .right_text {
       justify-self: start;
       align-self: start;
       margin: 0 30px 0 30px;
     }
-    .left_text{
+
+    .left_text {
       margin: 0 30px 0 30px;
       justify-self: end;
       align-self: end;
     }
   }
 }
+
 .main_menu {
   display: grid;
   grid-template-columns: 6fr 6fr;
   margin: 0 16.3%;
+
   .menu_part {
     display: grid;
-    grid-template-columns: 6fr 6fr;
     width: 1000px;
-
-
-    h4 {
-      color: black;
-      text-transform: uppercase;
+    h2{
+      border-bottom-color:rgb(216, 216, 216);
+      border-bottom-style:solid;
+      border-bottom-width:2px;
+      box-sizing:border-box;
+      color:rgb(37, 37, 37);
+      display:block;
+      font-family: "Source Sans Pro", serif;
+      font-size:32px;
+      height: 70px;
+      letter-spacing:3.2px;
+      line-height:45.7143px;
     }
-
-    .price_header {
+    .menu__colums {
       display: grid;
       grid-template-columns: 6fr 6fr;
-      height: 60px;
       h4 {
-        text-align: left;
-        color: rgb(37, 37, 37);
-        font-size: 19px;
-        letter-spacing: 1.9px;
-        font-family: "Source Sans Pro", sans-serif;
-      }
-
-      span {
-        display: block;
-        padding: 25px 20px;
-        text-align: center;
-        color:rgb(81, 81, 81);
-        cursor:pointer;
-        font-family: Cabin, sans-serif;
-        font-size:19px;
-        font-weight:700;
-      }
-    }
-
-    .desc_button {
-      display: grid;
-      grid-template-columns: 6fr 6fr;
-      height: 60px;
-      padding-top: 10px;
-      p{
-        color:rgb(81, 81, 81);
-        display:block;
-        font-family: "Source Sans Pro", sans-serif;
-        font-size:16px;
-        margin: 0;
-        line-height:22.8571px;
-      }
-      button {
-        margin-left: 30px;
-        width: 150px;
-        height: 50px;
+        color: black;
         text-transform: uppercase;
-        background: white;
-        border: 2px solid goldenrod;
+      }
 
-        &:hover {
-          background: goldenrod;
-          color: white;
-          transition: 0.15s ease-in-out;
+      .price_header {
+        display: grid;
+        grid-template-columns: 6fr 6fr;
+        height: 60px;
+
+        h4 {
+          text-align: left;
+          color: rgb(37, 37, 37);
+          font-size: 19px;
+          letter-spacing: 1.9px;
+          font-family: "Source Sans Pro", sans-serif;
+        }
+
+        span {
+          display: block;
+          padding: 25px 20px;
+          text-align: center;
+          color: rgb(81, 81, 81);
+          cursor: pointer;
+          font-family: Cabin, sans-serif;
+          font-size: 19px;
+          font-weight: 700;
+        }
+      }
+
+      .desc_button {
+        display: grid;
+        grid-template-columns: 6fr 6fr;
+        height: 60px;
+        padding-top: 10px;
+
+        p {
+          color: rgb(81, 81, 81);
+          display: block;
+          font-family: "Source Sans Pro", sans-serif;
+          font-size: 16px;
+          margin: 0;
+          line-height: 22.8571px;
+        }
+
+        button {
+          margin-left: 30px;
+          width: 150px;
+          height: 50px;
+          text-transform: uppercase;
+          background: white;
+          border: 2px solid goldenrod;
+
+          &:hover {
+            background: goldenrod;
+            color: white;
+            transition: 0.15s ease-in-out;
+          }
         }
       }
     }
