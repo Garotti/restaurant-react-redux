@@ -1,5 +1,4 @@
 import React from 'react';
-import mapDispatchToProps from "react-redux/lib/connect/mapDispatchToProps";
 import {connect} from "react-redux";
 import Reservations from "./Reservations";
 
@@ -9,6 +8,7 @@ class ReservationContainer extends React.Component {
             <div>
                 <Reservations optionsValue={this.props.optionsValue}
                               people={this.props.howManyPeople}
+                              date={this.props.date}
                 />
             </div>
         );
@@ -16,6 +16,7 @@ class ReservationContainer extends React.Component {
 }
 const mapStateToProps = (state) => {
     return{
+        date: state.reservationPage.date,
         optionsValue: state.reservationPage.optionsValue,
         howManyPeople: state.reservationPage.howManyPeople,
     }

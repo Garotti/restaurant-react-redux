@@ -4,7 +4,7 @@ let initialState = {
         {id: 2,value: "7:00 am"},
         {id: 3,value: "7:30 am"},
         {id: 4,value: "8:00 am"},
-        {id: 4,value: "8:30 am"},
+        {id: Math.random(),value: "8:30 am"},
         {id: 5,value: "9:00 am"},
         {id: 6,value: "9:30 am"},
         {id: 7,value: "10:00 am"},
@@ -47,7 +47,8 @@ let initialState = {
         {id: 8, people: "8 People"},
         {id: 9, people: "9 People"},
         {id: 10, people: "10 People"},
-    ]
+    ],
+    date: new Date().toISOString().slice(0,10)
 };
 const reservationReducer = (state = initialState, action)  => {
 

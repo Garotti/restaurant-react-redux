@@ -1,15 +1,29 @@
-import React from 'react';
+import React, {useState} from 'react';
 import s from './Reservations.module.scss'
 import reservation_1 from '../../assets/images/reservations_foto-1.jpg';
 import reservation_2 from '../../assets/images/reservation_foto-2.jpg';
 import SliderV1 from "../common/Sliders/SliderV1/SliderV1";
 import Footer from "../Footer/Footer";
 import {FaRegCalendarAlt, FaRegClock, IoMdPerson} from "react-icons/all";
+import Calendar from 'react-calendar';
 
 
 const Reservations = (props) => {
+    const [hookDate, setHookDate] = useState(new Date);
+    const [toggleCalendar, setToggleCalendar] = useState(false);
 
-    let date = new Date();
+
+    const handleCalendarClick = () => {
+        setToggleCalendar(!toggleCalendar);
+        console.log(toggleCalendar);
+    };
+
+    const q = hookDate.toISOString().slice(0,10);
+    console.log(q);
+
+    const onChangeCalendar = (hookDate) => {
+        setHookDate(hookDate);
+    };
 
     return (
         <div>
@@ -27,21 +41,25 @@ const Reservations = (props) => {
                     <div className={s.date_time_people}>
                         <div>
                             <i><FaRegCalendarAlt></FaRegCalendarAlt></i>
-                            <input type="text" placeholder={date} value={date}/>
+                            <input onClick={handleCalendarClick} type="text" value={q}/>
+                            {!toggleCalendar ? <div>
+                                <Calendar className={s.calendar} onClickDay={onChangeCalendar} value={hookDate} />
+                            </div> : null}
                         </div>
                         <div>
                             <i><FaRegClock></FaRegClock></i>
-                            <select name="ResTime" id="time-otreservations">
-                                {props.optionsValue.map(item => <option key={item.id}  value={item.value}>
+                            <select className={s.select_options} name="ResTime" id="time-otreservations">
+                                {props.optionsValue.map(item =>
+                                    <option key={item.id} value={item.value}>
                                     {item.value}
                                 </option>)}
                             </select>
                         </div>
                         <div>
                             <i><IoMdPerson></IoMdPerson></i>
-                            <select name="partySize" id="party-otreservation">
+                            <select className={s.select_options} name="partySize" id="party-otreservation">
                                 {props.people.map(party =>
-                                    <option key={party.id} value={party.people}>
+                                    <option  key={party.id} value={party.people}>
                                         {party.people}
                                     </option>)}
                             </select>
