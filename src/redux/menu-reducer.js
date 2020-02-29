@@ -182,10 +182,14 @@ const menuReducer = (state = initialState, action) => {
         case ADD_QUANTITY: {
             let addedItem = state.items.find(item => item.id === action.id);
             addedItem.quantity += 1;
-            let newTotal = state.total + addedItem.price;
+
+
+            let newTotal = parseFloat(state.total.toString());
+            newTotal = (newTotal + parseFloat(addedItem.price.toString())).toFixed(2);
+            // let newTotal = state.total + addedItem.price;
             return {
                 ...state,
-                total: Math.floor(newTotal * 100) / 100
+                total: newTotal
             }
         }
         case SUB_QUANTITY: {

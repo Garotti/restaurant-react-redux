@@ -24,7 +24,7 @@ const Header = (props) => {
         <header>
              <nav className={`${s.navbar} ${!toggle ? s.active : s.close} }`}>
                     <div className={s.nav_left}>
-                        <NavLink to={'/'}><h2>ROSA</h2></NavLink>
+                        <NavLink to={'/home'}><h2>ROSA</h2></NavLink>
                     </div>
                     <ul className={s.nav_center}>
                         <li><NavLink to={'/home'}>Home</NavLink></li>

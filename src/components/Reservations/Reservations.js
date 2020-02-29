@@ -12,14 +12,12 @@ const Reservations = (props) => {
     const [hookDate, setHookDate] = useState(new Date);
     const [toggleCalendar, setToggleCalendar] = useState(false);
 
+    const q = hookDate.toISOString().slice(0,10);
 
     const handleCalendarClick = () => {
         setToggleCalendar(!toggleCalendar);
         console.log(toggleCalendar);
     };
-
-    const q = hookDate.toISOString().slice(0,10);
-    console.log(q);
 
     const onChangeCalendar = (hookDate) => {
         setHookDate(hookDate);
@@ -42,7 +40,7 @@ const Reservations = (props) => {
                         <div>
                             <i><FaRegCalendarAlt></FaRegCalendarAlt></i>
                             <input onClick={handleCalendarClick} type="text" value={q}/>
-                            {!toggleCalendar ? <div>
+                            {toggleCalendar ? <div>
                                 <Calendar className={s.calendar} onClickDay={onChangeCalendar} value={hookDate} />
                             </div> : null}
                         </div>
