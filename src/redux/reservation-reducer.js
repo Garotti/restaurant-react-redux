@@ -1,40 +1,40 @@
 let initialState = {
     optionsValue: [
-        {id: 1,value: "6:30 am"},
-        {id: 2,value: "7:00 am"},
-        {id: 3,value: "7:30 am"},
-        {id: 4,value: "8:00 am"},
-        {id: Math.random(),value: "8:30 am"},
-        {id: 5,value: "9:00 am"},
-        {id: 6,value: "9:30 am"},
-        {id: 7,value: "10:00 am"},
-        {id: 8,value: "10:30 am"},
-        {id: 9,value: "11:00 am"},
-        {id: 10,value: "11:30 am"},
-        {id: 11,value: "12:00 pm"},
-        {id: 12,value: "12:30 pm"},
-        {id: 13,value: "1:00 pm"},
-        {id: 14,value: "1:30 pm"},
-        {id: 15,value: "2:00 pm"},
-        {id: 16,value: "2:30 pm"},
-        {id: 17,value: "3:00 pm"},
-        {id: 18,value: "3:30 pm"},
-        {id: 19,value: "4:00 pm"},
-        {id: 20,value: "4:30 pm"},
-        {id: 21,value: "5:00 pm"},
-        {id: 22,value: "5:30 pm"},
-        {id: 23,value: "6:00 pm"},
-        {id: 24,value: "6:30 pm"},
-        {id: 25,value: "7:00 pm"},
-        {id: 26,value: "7:30 pm"},
-        {id: 27,value: "8:00 pm"},
-        {id: 28,value: "8:30 pm"},
-        {id: 29,value: "9:00 pm"},
-        {id: 30,value: "9:30 pm"},
-        {id: 31,value: "10:00 pm"},
-        {id: 32,value: "10:30 pm"},
-        {id: 33,value: "11:00 pm"},
-        {id: 34,value: "11:30 pm"},
+        {id: 1, value: "6:30 am"},
+        {id: 2, value: "7:00 am"},
+        {id: 3, value: "7:30 am"},
+        {id: 4, value: "8:00 am"},
+        {id: Math.random(), value: "8:30 am"},
+        {id: 5, value: "9:00 am"},
+        {id: 6, value: "9:30 am"},
+        {id: 7, value: "10:00 am"},
+        {id: 8, value: "10:30 am"},
+        {id: 9, value: "11:00 am"},
+        {id: 10, value: "11:30 am"},
+        {id: 11, value: "12:00 pm"},
+        {id: 12, value: "12:30 pm"},
+        {id: 13, value: "1:00 pm"},
+        {id: 14, value: "1:30 pm"},
+        {id: 15, value: "2:00 pm"},
+        {id: 16, value: "2:30 pm"},
+        {id: 17, value: "3:00 pm"},
+        {id: 18, value: "3:30 pm"},
+        {id: 19, value: "4:00 pm"},
+        {id: 20, value: "4:30 pm"},
+        {id: 21, value: "5:00 pm"},
+        {id: 22, value: "5:30 pm"},
+        {id: 23, value: "6:00 pm"},
+        {id: 24, value: "6:30 pm"},
+        {id: 25, value: "7:00 pm"},
+        {id: 26, value: "7:30 pm"},
+        {id: 27, value: "8:00 pm"},
+        {id: 28, value: "8:30 pm"},
+        {id: 29, value: "9:00 pm"},
+        {id: 30, value: "9:30 pm"},
+        {id: 31, value: "10:00 pm"},
+        {id: 32, value: "10:30 pm"},
+        {id: 33, value: "11:00 pm"},
+        {id: 34, value: "11:30 pm"},
     ],
     howManyPeople: [
         {id: 1, people: "1 Person"},
@@ -48,9 +48,29 @@ let initialState = {
         {id: 9, people: "9 People"},
         {id: 10, people: "10 People"},
     ],
-    date: new Date().toISOString().slice(0,10)
+    info: [
+        {
+            topTitle: "The private",
+            title: 'Mezzanine',
+            img: 'https://cdn.demos.pixelgrade.com/wp-content/uploads/sites/5/2014/05/seven_dials-006.jpg',
+            text: 'Rosa’s 50 seat room, “The Meazzanine Room” features a temperature-\n' +
+                'controlled wine cellar, displays of more wine and a private atmosphere. A\n' +
+                'semi-private room, “Barbaresco,” is available for meetings, birthdays and\n' +
+                'other occasions.',
+            seats: 'Seat up to 50 guests'
+        },
+        {
+            topTitle: "The dining",
+            title: 'Crown',
+            img: 'https://cdn.demos.pixelgrade.com/wp-content/uploads/sites/5/2014/05/air_street-010.jpg',
+            text: 'Overlooking the dining room and open kitchen, can seat up to 75 guests or\n' +
+                'a standing reception of 130 guests. Ut enim ad minim veniam, quis nostrud\n' +
+                'exercitation ullamco laboris nisi ut aliquip.',
+            seats: 'Seat up to 75 guests'
+        },
+    ]
 };
-const reservationReducer = (state = initialState, action)  => {
+const reservationReducer = (state = initialState, action) => {
 
     return state;
 };

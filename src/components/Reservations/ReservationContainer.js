@@ -9,6 +9,7 @@ class ReservationContainer extends React.Component {
                 <Reservations optionsValue={this.props.optionsValue}
                               people={this.props.howManyPeople}
                               date={this.props.date}
+                              info={this.props.info}
                 />
             </div>
         );
@@ -16,6 +17,7 @@ class ReservationContainer extends React.Component {
 }
 const mapStateToProps = (state) => {
     return{
+        info: state.reservationPage.info,
         date: state.reservationPage.date,
         optionsValue: state.reservationPage.optionsValue,
         howManyPeople: state.reservationPage.howManyPeople,

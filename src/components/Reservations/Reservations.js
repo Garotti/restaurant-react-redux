@@ -12,7 +12,7 @@ const Reservations = (props) => {
     const [hookDate, setHookDate] = useState(new Date);
     const [toggleCalendar, setToggleCalendar] = useState(false);
 
-    const q = hookDate.toISOString().slice(0,10);
+    const q = hookDate.toISOString().slice(0, 10);
 
     const handleCalendarClick = () => {
         setToggleCalendar(!toggleCalendar);
@@ -41,7 +41,7 @@ const Reservations = (props) => {
                             <i><FaRegCalendarAlt></FaRegCalendarAlt></i>
                             <input onClick={handleCalendarClick} type="text" value={q}/>
                             {toggleCalendar ? <div>
-                                <Calendar className={s.calendar} onClickDay={onChangeCalendar} value={hookDate} />
+                                <Calendar className={s.calendar} onClickDay={onChangeCalendar} value={hookDate}/>
                             </div> : null}
                         </div>
                         <div>
@@ -49,15 +49,15 @@ const Reservations = (props) => {
                             <select className={s.select_options} name="ResTime" id="time-otreservations">
                                 {props.optionsValue.map(item =>
                                     <option key={item.id} value={item.value}>
-                                    {item.value}
-                                </option>)}
+                                        {item.value}
+                                    </option>)}
                             </select>
                         </div>
                         <div>
                             <i><IoMdPerson></IoMdPerson></i>
                             <select className={s.select_options} name="partySize" id="party-otreservation">
                                 {props.people.map(party =>
-                                    <option  key={party.id} value={party.people}>
+                                    <option key={party.id} value={party.people}>
                                         {party.people}
                                     </option>)}
                             </select>
@@ -95,35 +95,20 @@ const Reservations = (props) => {
                 </div>
             </section>
             <section className={s.four_section}>
-                <div className={s.mezzanine_part}>
-                    <div className={s.text_part}>
-                        <h2>The private</h2>
-                        <h1>Mezzanine</h1>
-                        <p>Rosa’s 50 seat room, “The Meazzanine Room” features a temperature- <br/>
-                            controlled wine cellar, displays of more wine and a private atmosphere. A <br/>
-                            semi-private room, “Barbaresco,” is available for meetings, birthdays and <br/>
-                            other occasions.
-                        </p>
-                        <p><strong>Seat up to 50 guests</strong></p>
-                    </div>
-                    <div>
-                        <img src={reservation_1} alt="restaurant_photo"/>
-                    </div>
-                </div>
-                <div className={s.crown_part}>
-                    <div>
-                        <img src={reservation_2} alt="restaurant_photo"/>
+                {props.info.map(i => <div className={s.crown_part}>
+                    <div className={s.first_deleted_img}>
+                        <img src={i.img} alt="photo"/>
                     </div>
                     <div className={s.dining_text}>
-                        <h2>The dining</h2>
-                        <h1>Crown</h1>
-                        <p>Overlooking the dining room and open kitchen, can seat up to 75 guests or <br/>
-                            a standing reception of 130 guests. Ut enim ad minim veniam, quis nostrud <br/>
-                            exercitation ullamco laboris nisi ut aliquip.
-                        </p>
-                        <p><strong>Seat up to 75 guests</strong></p>
+                        <h2>{i.topTitle}</h2>
+                        <h1>{i.title}</h1>
+                        <p>{i.text}</p>
+                        <p>{i.seats}</p>
                     </div>
-                </div>
+                    <div>
+                        <img className={s.second_delete_img} src={i.img} alt="photo"/>
+                    </div>
+                </div>)}
             </section>
             <Footer/>
         </div>
