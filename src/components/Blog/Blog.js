@@ -1,11 +1,17 @@
-import React, {useState} from 'react';
+import React, {useEffect, useState} from 'react';
+
 import s from './Blog.module.scss';
+
 import {FaAngleDown, GoSearch} from "react-icons/all";
+
 import Footer from "../Footer/Footer";
 
 const Blog = (props) => {
     const [inputValue, setInputValue] = useState('');
 
+    useEffect(() => {
+        window.scrollTo(0,0)
+    }, []);
 
     return (<>
             <section className={s.blog_first_part}>

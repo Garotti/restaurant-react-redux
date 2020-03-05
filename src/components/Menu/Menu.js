@@ -1,7 +1,8 @@
-import React, {useState} from 'react';
+import React, {useEffect, useState} from 'react';
+
 import s from './Menu.module.scss'
+
 import LittleCart from "./LittleCart/LittleCart";
-import {addQuantity, subtractQuantity} from "../../redux/menu-reducer";
 
 const Menu = (props) => {
     const [boolValue, setBoolValue] = useState(false);
@@ -9,12 +10,10 @@ const Menu = (props) => {
         props.addToCart(id);
         setBoolValue(true);
     };
-    const handleSetDessert = (id) => {
-        props.setDessert(id);
-    };
-    const handleSetMains = (id) => {
-        props.setMains(id);
-    };
+
+    useEffect(() => {
+        window.scrollTo(0,0)
+    }, []);
 
     return (
         <div>

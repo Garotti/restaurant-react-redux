@@ -1,6 +1,9 @@
-import React, {useState} from 'react';
+import React, {useEffect} from 'react';
+
 import s from './Cart.module.scss';
+
 import {IoMdArrowDropupCircle, MdArrowDropDownCircle} from "react-icons/all";
+
 const Cart = (props) => {
 
     const addQuantity = (id) => {
@@ -10,6 +13,10 @@ const Cart = (props) => {
     const subtractQuantity = (id) => {
         props.subtractQuantity(id);
     };
+
+    useEffect(() => {
+        window.scrollTo(0,0)
+    }, []);
 
     let addedItems = props.items.length ?
         (

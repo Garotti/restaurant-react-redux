@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useEffect} from 'react';
 import s from './Contact.module.scss'
 import {FaFacebookF, FaTwitter} from "react-icons/all";
 import Footer from "../Footer/Footer";
@@ -9,6 +9,12 @@ import Form from "./Form/Form";
 import Error from "./Form/Error/Error";
 
 const Contact = () => {
+
+
+    useEffect(() => {
+        window.scrollTo(0,0)
+    }, []);
+
     return (<>
             <section className={s.back_photo}>
                 <div className={s.header}>

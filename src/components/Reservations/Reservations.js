@@ -1,12 +1,12 @@
-import React, {useState} from 'react';
-import s from './Reservations.module.scss'
-import reservation_1 from '../../assets/images/reservations_foto-1.jpg';
-import reservation_2 from '../../assets/images/reservation_foto-2.jpg';
-import SliderV1 from "../common/Sliders/SliderV1/SliderV1";
-import Footer from "../Footer/Footer";
-import {FaRegCalendarAlt, FaRegClock, IoMdPerson} from "react-icons/all";
-import Calendar from 'react-calendar';
+import React, {useEffect, useState} from 'react';
 
+import s from './Reservations.module.scss'
+
+import SliderV1 from "../common/Sliders/SliderV1/SliderV1";
+import {FaRegCalendarAlt, FaRegClock, IoMdPerson} from "react-icons/all";
+
+import Calendar from 'react-calendar';
+import Footer from "../Footer/Footer";
 
 const Reservations = (props) => {
     const [hookDate, setHookDate] = useState(new Date);
@@ -22,6 +22,10 @@ const Reservations = (props) => {
     const onChangeCalendar = (hookDate) => {
         setHookDate(hookDate);
     };
+
+    useEffect(() => {
+        window.scrollTo(0,0)
+    }, []);
 
     return (
         <div>

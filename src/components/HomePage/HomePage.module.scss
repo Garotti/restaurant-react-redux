@@ -81,7 +81,8 @@
     display: grid;
     align-items: center;
     justify-items: center;
-    margin: 0 0 50px 150px;
+    margin: 0 50px 50px 150px;
+
 }
 .text_second h1{
     margin: 0;
@@ -102,6 +103,7 @@
     font-size:16px;
     line-height:27.2px;
     font-weight:400;
+
     text-align: center;
 }
 .text_second a{
@@ -179,7 +181,8 @@
     grid-gap: 15px;
 }
 .text_four{
-    margin: 50px 0 0 0;
+    margin: 50px 0 0 100px;
+    width: 70%;
     text-align: center;
 }
 .text_four h1{
@@ -266,7 +269,8 @@
     height: 500px;
 }
 .text_six{
-    margin: 100px 0 0 100px;
+    width: 75%;
+    margin: 100px 0 0 200px;
     text-align: center;
 }
 .text_six h1{
@@ -315,17 +319,22 @@
     grid-gap: 40px;
     margin-top: 50px;
 }
-.six_images img{
-    height: 400px;
+.six_images {
+    margin-left: 100px;
+    img {
+        height: 400px;
+    }
 }
 @media (max-width: 1250px){
     .text_six{
-        margin: 80px 10px 100px 0;
+        margin: 80px 10px 100px 100px;
     }
 }
 @media (max-width: 1030px){
-    .six_images img{
-        height: 350px;
+    .six_images{
+        img {
+            height: 350px;
+        }
     }
     .text_six{
         margin: 50px 0 0 50px;

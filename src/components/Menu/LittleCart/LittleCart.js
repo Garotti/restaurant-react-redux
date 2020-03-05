@@ -2,6 +2,7 @@ import React, {useEffect, useState} from 'react';
 import {NavLink} from "react-router-dom";
 
 import s from './LittleCart.module.scss'
+
 import {IoIosAdd, IoIosRemove} from "react-icons/all";
 
 const LittleCart = (props) => {
@@ -16,11 +17,10 @@ const LittleCart = (props) => {
             }else{
                 setScrollValue(false);
             }
-        });
-    });
-    useEffect(() => {
-        window.removeEventListener('scroll', () => {
-
+            return () => {
+                window.removeEventListener('scroll', () => {
+                });
+            }
         });
     });
 
