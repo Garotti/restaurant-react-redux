@@ -27,11 +27,11 @@ const Header = (props) => {
                         <NavLink to={'/home'}><h2>ROSA</h2></NavLink>
                     </div>
                     <ul className={s.nav_center}>
-                        <li><NavLink to={'/home'}>Home</NavLink></li>
-                        <li><NavLink to={'/reservations'}>Reservations</NavLink></li>
-                        <li><NavLink to={'/menu'}>Menu</NavLink></li>
-                        <li><NavLink to={'/blog'}>Blog</NavLink></li>
-                        <li><NavLink to={'/contact'}>Contact</NavLink></li>
+                        <li><NavLink activeClassName={s.activeLink} to={'/home'}>Home</NavLink></li>
+                        <li><NavLink activeClassName={s.activeLink} to={'/reservations'}>Reservations</NavLink></li>
+                        <li><NavLink activeClassName={s.activeLink} to={'/menu'}>Menu</NavLink></li>
+                        <li><NavLink activeClassName={s.activeLink} to={'/blog'}>Blog</NavLink></li>
+                        <li><NavLink activeClassName={s.activeLink} to={'/contact'}>Contact</NavLink></li>
                     </ul>
                     <ul className={s.nav_right}>
                         <li><a href={"https://www.facebook.com/"}><IoLogoFacebook></IoLogoFacebook></a></li>

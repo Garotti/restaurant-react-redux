@@ -21,7 +21,7 @@
     justify-self: end;
     position: relative;
     text-align: center;
-    width: 55%;
+    width: 55.5%;
     padding: 12px;
     border: 2px solid gray;
     border-radius: 5px;
@@ -29,7 +29,7 @@
     &:hover .drop_menu {
       top: 0;
       margin: 43px 0 0 0;
-      left: -2px;
+      left: -1%;
       border-bottom-right-radius: 5px;
       border-bottom-left-radius: 5px;
       border-top: 2px;
@@ -104,10 +104,13 @@
 // second section
 .second_part {
   margin: 50px 350px;
-  .blog_first_subpart {
+  .blog_first_subpart:nth-child(even){
     display: grid;
     grid-template-columns: 6fr 6fr;
     padding: 30px 0;
+    .deleted_1{
+      display: none;
+    }
     .first_article{
       @include blog_default_text_part;
       text-align: center;
@@ -115,34 +118,13 @@
       margin: 10px 30px 0 0;
     }
   }
-
-  .blog_second_subpart {
+  .blog_first_subpart:nth-child(odd){
     display: grid;
     grid-template-columns: 6fr 6fr;
     padding: 30px 0;
-    .first_article{
-      @include blog_default_text_part;
-      text-align: center;
-      text-decoration: none;
-      margin: 10px 0 0 30px;
+    .deleted_2{
+      display: none;
     }
-  }
-  .blog_third_subpart {
-    display: grid;
-    grid-template-columns: 6fr 6fr;
-    padding: 30px 0;
-    .first_article{
-      @include blog_default_text_part;
-      text-align: center;
-      text-decoration: none;
-      margin: 10px 30px 0 0;
-    }
-  }
-
-  .blog_four_subpart {
-    display: grid;
-    grid-template-columns: 6fr 6fr;
-    padding: 30px 0;
     .first_article{
       @include blog_default_text_part;
       text-align: center;
@@ -156,19 +138,51 @@
   }
 }
 @media(max-width: 1650px){
+  .blog_first_part{
+    .header_news{
+      h1 {
+        margin: 0 0 0 250px;
+      }
+    }
+  }
   .second_part {
     margin: 50px 250px;
   }
 }
 @media(max-width: 1500px){
+  .blog_first_part{
+    .header_news{
+      h1 {
+        margin: 0 0 0 150px;
+      }
+    }
+  }
   .second_part {
     margin: 50px 150px;
     img{
-      width: 550px;
+      width: 600px;
     }
   }
 }
+@media(max-width: 1250px){
+  .categories{
+    height: 20px;
+  }
+  .search{
+    margin-left: 20px;
+  }
+}
 @media(max-width: 1150px){
+  .blog_first_part{
+    .header_news{
+      h1 {
+        margin: 0 0 0 50px;
+      }
+    }
+    .categories{
+      width: 100px;
+    }
+  }
   .second_part {
     margin: 50px 50px;
     img{

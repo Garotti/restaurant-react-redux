@@ -1,3 +1,6 @@
+import IMG1 from '../assets/images/reservations_foto-1.jpg'
+import IMG2 from '../assets/images/reservation_foto-2.jpg'
+
 let initialState = {
     optionsValue: [
         {id: 1, value: "6:30 am"},
@@ -52,7 +55,7 @@ let initialState = {
         {
             topTitle: "The private",
             title: 'Mezzanine',
-            img: 'https://cdn.demos.pixelgrade.com/wp-content/uploads/sites/5/2014/05/seven_dials-006.jpg',
+            img: IMG1,
             text: 'Rosa’s 50 seat room, “The Meazzanine Room” features a temperature-\n' +
                 'controlled wine cellar, displays of more wine and a private atmosphere. A\n' +
                 'semi-private room, “Barbaresco,” is available for meetings, birthdays and\n' +
@@ -62,7 +65,7 @@ let initialState = {
         {
             topTitle: "The dining",
             title: 'Crown',
-            img: 'https://cdn.demos.pixelgrade.com/wp-content/uploads/sites/5/2014/05/air_street-010.jpg',
+            img: IMG2,
             text: 'Overlooking the dining room and open kitchen, can seat up to 75 guests or\n' +
                 'a standing reception of 130 guests. Ut enim ad minim veniam, quis nostrud\n' +
                 'exercitation ullamco laboris nisi ut aliquip.',

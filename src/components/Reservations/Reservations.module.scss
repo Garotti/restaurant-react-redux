@@ -172,7 +172,7 @@
 
 // four section
 .four_section {
-  height: 1000px;
+  height: 1050px;
   .crown_part:nth-child(2) {
     display: grid;
     grid-template-columns: 6fr 6fr;
@@ -199,7 +199,7 @@
     grid-template-columns: 6fr 6fr;
     align-content: center;
     justify-content: center;
-    margin-top: 150px;
+    margin-top: 200px;
     .dining_text {
       @include default_text_part;
       text-align: center;
