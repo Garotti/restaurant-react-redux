@@ -72,6 +72,7 @@ const Menu = (props) => {
                                 addQuantity={props.addQuantity}
                                 subtractQuantity={props.subtractQuantity}
                                 itemTotal={props.itemTotal}
+                                totalQuantity={props.totalQuantity}
                     />
                 </div>
             </section>

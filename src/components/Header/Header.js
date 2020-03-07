@@ -40,7 +40,11 @@ const Header = (props) => {
                         <li><a href={"https://www.instagram.com/"}><FaTwitter></FaTwitter></a></li>
                         <li><a href={"https://www.facebook.com/"}><FaInstagram></FaInstagram></a></li>
                         <li><a href={"https://www.facebook.com/"}><FaTelegramPlane></FaTelegramPlane></a></li>
-                        <li><NavLink to="Cart"><FaShoppingCart></FaShoppingCart></NavLink></li>
+                        <li>
+                            <NavLink to="Cart"><FaShoppingCart></FaShoppingCart>
+                            {props.totalQuantity >= 1 ?<span className={s.badge}>{props.totalQuantity}</span> : null}
+                            </NavLink>
+                        </li>
                     </ul>
                 </nav>
             <div>

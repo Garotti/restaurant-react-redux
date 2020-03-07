@@ -13,7 +13,7 @@ class MenuContainer extends React.Component {
                       itemTotal={this.props.itemTotal}
                       items={this.props.items}
                       desserts={this.props.desserts}
-
+                      totalQuantity={this.props.totalQuantity}
 
                       addToCart={this.props.addToCart}
                       addQuantity={this.props.addQuantity}
@@ -28,6 +28,7 @@ const mapStateToProps = (state) => {
     return{
         total: state.menuPage.total,
         itemTotal: state.menuPage.itemTotal,
+        totalQuantity: state.menuPage.totalQuantity,
 
         desserts: state.menuPage.desserts,
         menu: state.menuPage.items,

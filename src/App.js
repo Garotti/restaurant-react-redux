@@ -8,14 +8,15 @@ import CartContainer from "./components/Cart/CartContainer";
 import ReservationContainer from "./components/Reservations/ReservationContainer";
 import BlogContainer from "./components/Blog/BlogContainer";
 import HomePageContainer from "./components/HomePage/HomePageContainer";
+import HeaderContainer from "./components/Header/HeaderContainer";
 
 const App = () => {
 
   return (
       <div>
-          <Header />
+          <HeaderContainer />
           <div>
-              <Route path={'/'} render={() => <Redirect to={'/home'}/>} />
+              <Route path={'/'} render={() => <Redirect to={'/menu'}/>} />
             <Route path={'/home'} render={() => <HomePageContainer />}/>
             <Route path={'/reservations'} render={() => <ReservationContainer />}/>
             <Route path={'/menu'} render={() => <MenuContainer />}/>
