@@ -70,3 +70,9 @@
     margin: 50px 10px;
   }
 }
+@media(max-width: 900px){
+  .first_contact_part{
+    grid-template-columns: 12fr;
+    height: 800px;
+  }
+}

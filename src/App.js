@@ -1,6 +1,5 @@
 import React from 'react';
 import './App.scss';
-import Header from "./components/Header/Header";
 import {Redirect, Route} from "react-router-dom";
 import Contact from "./components/Contact/Contact";
 import MenuContainer from "./components/Menu/MenuContainer";

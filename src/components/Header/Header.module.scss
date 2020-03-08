@@ -117,48 +117,54 @@ a.activeLink {
     color: white;
   }
   .navbar {
-    border-top: 2px solid grey;
     display: grid;
     margin-top: 54px;
     grid-template-columns: 0;
-    background: white;
-
+    background: url("https://images.wallpaperscraft.ru/image/kafe_restoran_stolik_interer_dizajn_110567_3840x2400.jpg");
+    border-bottom: 1px solid gray;
     .nav_center {
       display: grid;
       grid-template-columns: 0;
       grid-gap: 2px;
       letter-spacing: 2em;
+      a.activeLink{
+        background: white;
+      }
     }
 
     .nav_center a {
+      border: 1px solid black;
+      color: black;
       margin-left: 50%;
       text-align: center;
       display: block;
-      border: 2px solid grey;
-      width: 300px;
+      font-weight: 700;
+      width: 270px;
+      &:hover{
+        background: white;
+      }
     }
 
     .nav_right {
+      margin-left: 20px;
       a {
         display: grid;
+        color: white;
         align-self: center;
         justify-self: center;
-        border: 2px solid grey;
-        border-radius: 10px;
+        border: 1px solid black;
+        border-radius: 5px;
         width: 50px;
         padding: 10px;
-
         &:hover {
-          background: #61dafb;
+          background: white;
           transition: 0.15s ease-in-out;
-          border-radius: 10px;
-          border: 2px solid darkcyan;
-          color: white;
+          color: black;
         }
       }
 
       .badge {
-        margin: 400px 0 0 390px;
+        margin: 389px 0 0 400px;
       }
     }
   }

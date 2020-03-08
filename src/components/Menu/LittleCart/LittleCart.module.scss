@@ -9,3 +9,29 @@
   width: 95%;
   @include little_cart;
 }
+@media(max-width: 1700px){
+  .active{
+    width: 15%;
+    .cart_image{
+      margin-right: 20px;
+    }
+  }
+}
+@media(max-width: 1700px){
+  .active{
+    .cart_image{
+      margin-left: 25px;
+    }
+  }
+}@media(max-width: 1483px){
+  .active{
+    width: 220px;
+    .cart_image{
+    }
+  }
+}
+@media(max-width: 1040px){
+  .cart{
+    width: 228px;
+  }
+}

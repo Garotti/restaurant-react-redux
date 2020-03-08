@@ -45,29 +45,32 @@
 .main_menu {
   display: grid;
   grid-template-columns: 6fr 6fr;
-  margin: 0 16.3%;
+  margin: 0 290px;
 
   .menu_part {
     display: grid;
     width: 1000px;
-    h2{
-      border-bottom-color:rgb(216, 216, 216);
-      border-bottom-style:solid;
-      border-bottom-width:2px;
-      width:93%;
 
-      box-sizing:border-box;
-      color:rgb(37, 37, 37);
-      display:block;
+    h2 {
+      border-bottom-color: rgb(216, 216, 216);
+      border-bottom-style: solid;
+      border-bottom-width: 2px;
+      width: 93%;
+
+      box-sizing: border-box;
+      color: rgb(37, 37, 37);
+      display: block;
       font-family: "Source Sans Pro", serif;
-      font-size:32px;
+      font-size: 32px;
       height: 70px;
-      letter-spacing:3.2px;
-      line-height:45.7143px;
+      letter-spacing: 3.2px;
+      line-height: 45.7143px;
     }
+
     .menu__colums {
       display: grid;
       grid-template-columns: 6fr 6fr;
+
       h4 {
         color: black;
         text-transform: uppercase;
@@ -125,6 +128,57 @@
             background: goldenrod;
             color: white;
             transition: 0.15s ease-in-out;
+          }
+        }
+      }
+    }
+  }
+}
+
+@media(max-width: 1700px) {
+  .main_menu {
+    margin: 0 179.4px;
+  }
+}
+
+@media(max-width: 1600px) {
+  .main_menu {
+    margin: 0 150px;
+  }
+}
+
+@media(max-width: 1551px) {
+  .main_menu {
+    margin: 0 9%;
+    grid-template-columns: 8.5fr 240px;
+    .menu_part {
+      width: 950px;
+      .menu__colums {
+      }
+    }
+  }
+}
+
+@media(max-width: 1350px) {
+  .main_menu {
+    margin: 0 50px;
+    .menu_part {
+      width: 950px;
+    }
+  }
+}
+@media(max-width: 1250px) {
+  .main_menu {
+    grid-template-columns: 9fr 3fr;
+    margin: 0 50px;
+    .menu_part {
+      width: 100%;
+      .menu__colums{
+        grid-template-columns: 12fr;
+        width: 100%;
+        .price_header{
+          span{
+            margin-right: 100px;
           }
         }
       }
