@@ -8,6 +8,9 @@
           "follow newsletter" ;
   height: 500px;
   background: black;
+  width: 100%;
+  margin: 0 auto;
+
 }
 .about{
   grid-area: about;
@@ -68,4 +71,72 @@
   letter-spacing: 0.5px;
   padding: 20px;
   margin: 0;
+}
+@media(max-width: 900px) {
+  .seven_part{
+    margin: 0 auto;
+    width: 100%;
+  }
+}
+
+@media(max-width: 414px) {
+  .seven_part{
+    grid: none;
+    grid-template-areas:
+            "about"
+            "follow"
+            "newsletter"
+  ;
+    .about{
+      h4{
+        margin-top: 20px;
+      }
+      p{
+        margin: 0;
+        padding: 0;
+      }
+    }
+    .follow{
+      padding-right: 130px;
+      h4{
+        margin-left: 20px;
+      }
+    }
+    .newsletter{
+      h4{
+        margin-left: 50px;
+      }
+      margin-bottom: 20px;
+    }
+  }
+}
+@media(max-width: 375px){
+  .seven_part{
+    grid: none;
+    grid-template-areas:
+            "about"
+            "follow"
+          "newsletter"
+  ;
+    .about{
+      h4{
+        margin-top: 20px;
+      }
+      p{
+        margin: 0;
+        padding: 0;
+      }
+    }
+    .follow{
+      h4{
+        margin-left: 20px;
+      }
+    }
+    .newsletter{
+      h4{
+        margin-left: 50px;
+      }
+      margin-bottom: 20px;
+    }
+  }
 }

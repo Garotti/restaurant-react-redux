@@ -314,10 +314,10 @@
         }
     }
 }
-@media (max-width: 1000px){
+@media (max-width: 1024px){
     .second_part{
         .make_reservation{
-            margin: 20px 0 0 -100px;
+            margin: 20px 0 0 -70px;
             .date_time_people{
                 display: grid;
                 grid-template-columns: 1fr;
@@ -328,4 +328,40 @@
             margin: 20px;
         }
     }
+}
+@media (max-width: 768px){
+  .second_part{
+    height: 65vh;
+    .make_reservation{
+      margin: 20px 0 0 -195px;
+    }
+    .second_subpart{
+    }
+  }
+  .four_section{
+    img {
+      width: 200px;
+    }
+    .crown_part:nth-child(1){
+      .dining_text{
+        margin: 0 20px 0 10px;
+      }
+      .second_delete_img{
+        width: 400px;
+        margin: 0 20px 0 0;
+      }
+    }
+    .crown_part:nth-child(2){
+      grid-template-columns: 4fr 6fr;
+      .dining_text{
+        margin: 0;
+      }
+      .first_deleted_img{
+        img {
+          margin: 0 20px 0 20px;
+          width: 400px;
+        }
+      }
+    }
+   }
 }

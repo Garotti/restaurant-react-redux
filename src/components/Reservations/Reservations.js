@@ -24,7 +24,7 @@ const Reservations = (props) => {
     };
 
     useEffect(() => {
-        window.scrollTo(0,0)
+        window.scrollTo(0, 0)
     }, []);
 
     return (
@@ -99,20 +99,21 @@ const Reservations = (props) => {
                 </div>
             </section>
             <section className={s.four_section}>
-                {props.info.map(i => <div className={s.crown_part}>
-                    <div className={s.first_deleted_img}>
-                        <img src={i.img} alt="photo"/>
-                    </div>
-                    <div className={s.dining_text}>
-                        <h2>{i.topTitle}</h2>
-                        <h1>{i.title}</h1>
-                        <p>{i.text}</p>
-                        <p>{i.seats}</p>
-                    </div>
-                    <div>
-                        <img className={s.second_delete_img} src={i.img} alt="photo"/>
-                    </div>
-                </div>)}
+                {props.info.map(i =>
+                    <div className={s.crown_part}>
+                        <div className={s.first_deleted_img}>
+                            <img src={i.img} alt="photo"/>
+                        </div>
+                        <div className={s.dining_text}>
+                            <h2>{i.topTitle}</h2>
+                            <h1>{i.title}</h1>
+                            <p>{i.text}</p>
+                            <p>{i.seats}</p>
+                        </div>
+                        <div>
+                            <img className={s.second_delete_img} src={i.img} alt="photo"/>
+                        </div>
+                    </div>)}
             </section>
             <Footer/>
         </div>
