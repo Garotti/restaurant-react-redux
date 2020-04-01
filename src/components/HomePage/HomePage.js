@@ -34,8 +34,10 @@ const HomePage = ({home, menu, delight}, props) => {
                 </div>
             </div>
             <section className={s.third_part}>
-                <h2>Tasteful</h2>
-                <h1>Recipes</h1>
+                <div className={s.third_headers}>
+                    <h2>Tasteful</h2>
+                    <h1>Recipes</h1>
+                </div>
             </section>
             <section className={s.four_part}>
                 <div className={s.images}>
@@ -52,8 +54,10 @@ const HomePage = ({home, menu, delight}, props) => {
                 </div>
             </section>
             <section className={s.fifth_part}>
-                <h2>The Perfect</h2>
-                <h1>Blend</h1>
+                <div className={s.fifth_headers}>
+                    <h2>The Perfect</h2>
+                    <h1>Blend</h1>
+                </div>
             </section>
             <section className={s.six_part}>
                 <div className={s.text_six}>

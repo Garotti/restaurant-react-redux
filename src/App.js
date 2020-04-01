@@ -15,7 +15,7 @@ const App = () => {
       <div>
           <HeaderContainer />
           <div className={"main"}>
-              <Route path={'/'} render={() => <Redirect to={'/reservations'}/>} />
+              <Route path={'/'} render={() => <Redirect to={'/menu'}/>} />
             <Route path={'/home'} render={() => <HomePageContainer />}/>
             <Route path={'/reservations'} render={() => <ReservationContainer />}/>
             <Route path={'/menu'} render={() => <MenuContainer />}/>

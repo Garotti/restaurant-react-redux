@@ -1,37 +1,127 @@
 @import '../../../styles/mixins.scss';
-.active{
+
+.active {
   position: fixed;
   top: 20%;
   width: 12.5%;
   @include little_cart;
 }
+
+.hidden {
+  display: none;
+}
+
+.isShow {
+  display: block;
+}
+
 .cart {
   width: 95%;
   @include little_cart;
 }
-@media(max-width: 1700px){
-  .active{
+
+@media(max-width: 1700px) {
+  .active {
     width: 15%;
-    .cart_image{
+
+    .cart_image {
       margin-right: 20px;
     }
   }
 }
-@media(max-width: 1700px){
-  .active{
-    .cart_image{
+
+@media(max-width: 1700px) {
+  .active {
+    .cart_image {
       margin-left: 25px;
     }
   }
-}@media(max-width: 1483px){
-  .active{
+}
+
+@media(max-width: 1483px) {
+  .active {
     width: 220px;
-    .cart_image{
+
+    .cart_image {
     }
   }
 }
-@media(max-width: 1040px){
-  .cart{
+
+@media(max-width: 1040px) {
+  .cart {
     width: 228px;
   }
 }
+
+@media(min-width: 426px) {
+  .show_btn{
+    display: none;
+  }
+}
+@media(max-width: 425px) {
+  .active {
+    background-color: white;
+    position: fixed;
+    left: 100px;
+    top: 300px;
+    padding: 10px 10px 20px 10px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.5);
+    .cart_header{
+      .cart_image_a{
+        width: 150px;
+        margin: 0;
+        padding: 0;
+      }
+    }
+    .takeaway_btn{
+      margin-left: 20px;
+    }
+    button{
+      margin: 0;
+    }
+  }
+  .hidden {
+    display: none;
+  }
+  .show_btn{
+    button{
+      outline: none;
+      position: fixed;
+      bottom: 50px;
+      background-color: bisque;
+      left: 47%;
+      border-radius: 50%;
+      padding: 15px;
+      border: 2px solid brown;
+      i{
+        color: brown;
+        font-size: 15px;
+      }
+    }
+  }
+}
+@media(max-width: 425px){
+  .active{
+    top: 200px;
+  }
+}
+@media(max-width: 375px){
+  .active{
+    top: 130px;
+    left: 75px;
+  }
+}
+@media(max-width: 360px){
+  .active{
+    top: 130px;
+    left: 20%;
+  }
+}
+@media(max-width: 320px){
+  .active{
+    top: 55px;
+    left: 14%;
+  }
+}
+
+

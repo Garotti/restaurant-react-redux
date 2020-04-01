@@ -8,7 +8,6 @@ const Cart = (props) => {
 
     const addQuantity = (id) => {
         props.addQuantity(id);
-        debugger;
     };
     const subtractQuantity = (id) => {
         props.subtractQuantity(id);

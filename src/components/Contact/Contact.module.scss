@@ -76,3 +76,60 @@
     height: 800px;
   }
 }
+@media(max-width: 425px){
+  .first_contact_part{
+    height: 850px;
+    div{
+      width: 410px;
+    }
+  }
+}
+@media(max-width: 414px){
+  .back_photo{
+    position: relative;
+    .header{
+      position: absolute;
+      top: -20%;
+      left: 27%;
+    }
+  }
+  .first_contact_part{
+    height: 850px;
+    div{
+      width: 400px;
+    }
+  }
+}
+
+@media(max-width: 375px){
+  .back_photo{
+    position: relative;
+    .header{
+      position: absolute;
+      top: -25%;
+      left: 25%;
+    }
+  }
+  .first_contact_part{
+    height: 850px;
+    div{
+      width: 355px;
+    }
+  }
+}
+@media(max-width: 320px){
+  .back_photo{
+    position: relative;
+    .header{
+      position: absolute;
+      top: -10%;
+      left: 20%;
+    }
+  }
+  .first_contact_part{
+    height: 850px;
+    div{
+      width: 300px;
+    }
+  }
+}

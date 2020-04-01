@@ -365,3 +365,115 @@
     }
    }
 }
+@media(max-width: 414px){
+  .background_photo{
+    position: relative;
+    .reservation{
+      position: absolute;
+      top: 35%;
+    }
+  }
+  .second_part{
+    height: 110vh;
+    .make_reservation{
+      width: 411px;
+      margin: 0;
+    }
+    .second_subpart{
+      margin: 0;
+      grid-template-columns: 12fr;
+      .reserve_by_phone{
+        margin: 0 20px;
+      }
+      .dining_events{
+        margin: 0 20px;
+      }
+    }
+  }
+  .four_section{
+    height: 1200px;
+    img {
+      width: 200px;
+    }
+    .crown_part:nth-child(1){
+      grid-template-columns: 12fr;
+      margin: 60px 0 0 0;
+      .dining_text{
+        margin: 0 20px 0 10px;
+      }
+      .second_delete_img{
+        width: 360px;
+        height: 250px;
+        margin: 0 20px 0 20px;
+      }
+    }
+    .crown_part:nth-child(2){
+      margin: 20px 0 0 0;
+      grid-template-columns: 12fr;
+      .dining_text{
+        margin: 0 20px;
+
+      }
+      .first_deleted_img{
+        img {
+          margin: 0 20px 0 20px;
+          width: 360px;
+          height: 250px;
+        }
+      }
+    }
+  }
+}
+
+@media(max-width: 320px) {
+  .second_part{
+    height: 1000px;
+    .make_reservation{
+      width: 320px;
+      margin: 0;
+    }
+    .second_subpart{
+      margin: 0;
+      grid-template-columns: 12fr;
+      .reserve_by_phone{
+        margin: 0 20px;
+      }
+      .dining_events{
+        margin: 0 20px;
+      }
+    }
+  }
+  .four_section{
+    height: 1250px;
+    img {
+      width: 200px;
+    }
+    .crown_part:nth-child(1){
+      grid-template-columns: 12fr;
+      margin: 0;
+      .dining_text{
+        margin: 0 10px 0 10px;
+      }
+      .second_delete_img{
+        width: 300px;
+        height: 250px;
+        margin: 0 20px 0 22px;
+      }
+    }
+    .crown_part:nth-child(2){
+      margin: 20px 0 0 0;
+      grid-template-columns: 12fr;
+      .dining_text{
+        margin: 0 20px;
+
+      }
+      .first_deleted_img{
+        img {
+          margin: 0 20px 0 20px;
+          width: 300px;
+          height: 250px;
+        }
+      }
+    }
+  }
+}

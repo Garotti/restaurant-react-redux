@@ -79,6 +79,39 @@
   }
 }
 
+@media(max-width: 425px) {
+  .seven_part{
+    grid: none;
+    grid-template-areas:
+            "about"
+            "follow"
+            "newsletter"
+  ;
+    .about{
+      h4{
+        margin-top: 20px;
+      }
+      p{
+        margin: 0;
+        padding: 0;
+      }
+    }
+    .follow{
+      padding-right: 130px;
+      h4{
+        margin-left: 20px;
+      }
+    }
+    .newsletter{
+      margin-left: 27%;
+      h4{
+        margin-left: 50px;
+      }
+      margin-bottom: 20px;
+    }
+  }
+}
+
 @media(max-width: 414px) {
   .seven_part{
     grid: none;
@@ -128,6 +161,7 @@
       }
     }
     .follow{
+      padding: 0 100px 0 0;
       h4{
         margin-left: 20px;
       }
@@ -137,6 +171,17 @@
         margin-left: 50px;
       }
       margin-bottom: 20px;
+    }
+  }
+}
+@media(max-width: 320px){
+  .seven_part {
+    .follow {
+      padding: 0 80px 0 0;
+    }
+
+    .newsletter {
+      margin: 0 0 20px 60px;
     }
   }
 }
