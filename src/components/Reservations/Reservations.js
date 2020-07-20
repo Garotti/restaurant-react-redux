@@ -1,4 +1,4 @@
-import React, {useEffect, useState} from 'react';
+import React, {useEffect, useRef, useState} from 'react';
 
 import s from './Reservations.module.scss'
 
@@ -11,19 +11,24 @@ import Footer from "../Footer/Footer";
 const Reservations = (props) => {
     const [hookDate, setHookDate] = useState(new Date);
     const [toggleCalendar, setToggleCalendar] = useState(false);
+    const calendarRef = useRef();
 
     const q = hookDate.toISOString().slice(0, 10);
 
     const handleCalendarClick = () => {
         setToggleCalendar(!toggleCalendar);
-        console.log(toggleCalendar);
     };
 
     const onChangeCalendar = (hookDate) => {
         setHookDate(hookDate);
     };
-
+    const handleOutsideClick = (e) => {
+        if(calendarRef.current && !calendarRef.current.contains(e.target)) {
+            setToggleCalendar(false);
+        }
+    }
     useEffect(() => {
+        document.body.addEventListener('click', handleOutsideClick);
         window.scrollTo(0, 0)
     }, []);
 
@@ -43,7 +48,7 @@ const Reservations = (props) => {
                     <div className={s.date_time_people}>
                         <div>
                             <i><FaRegCalendarAlt></FaRegCalendarAlt></i>
-                            <input onClick={handleCalendarClick} type="text" value={q}/>
+                            <input ref={calendarRef} onClick={handleCalendarClick} type="text" value={q}/>
                             {toggleCalendar ? <div>
                                 <Calendar className={s.calendar} onClickDay={onChangeCalendar} value={hookDate}/>
                             </div> : null}
