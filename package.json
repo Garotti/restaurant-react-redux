@@ -45,7 +45,7 @@
   },
   "devDependencies": {
     "google-map-react": "^1.1.5",
-    "node-sass": "^4.13.1",
+    "node-sass": "^7.0.0",
     "react-google-maps": "^9.4.5",
     "yup": "^0.28.0"
   }
